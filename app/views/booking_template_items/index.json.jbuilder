@@ -1,0 +1,1 @@
+json.array! @booking_template_items, partial: 'booking_template_items/booking_template_item', as: :booking_template_item

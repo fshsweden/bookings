@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_str: MyString
+  week: 1
+  from: MyString
+  to: MyString
+  activity: MyString
+  team: MyString
+  note: MyString
+  zamboni: MyString
+  comment: MyString
+
+two:
+  date_str: MyString
+  week: 1
+  from: MyString
+  to: MyString
+  activity: MyString
+  team: MyString
+  note: MyString
+  zamboni: MyString
+  comment: MyString

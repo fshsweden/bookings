@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Booking template:</strong>
+  <%= @booking_template_item.booking_template_id %>
+</p>
+
+<p>
+  <strong>Date str:</strong>
+  <%= @booking_template_item.date_str %>
+</p>
+
+<p>
+  <strong>Week:</strong>
+  <%= @booking_template_item.week %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @booking_template_item.from %>
+</p>
+
+<p>
+  <strong>To:</strong>
+  <%= @booking_template_item.to %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @booking_template_item.activity %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @booking_template_item.team %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @booking_template_item.note %>
+</p>
+
+<p>
+  <strong>Zamboni:</strong>
+  <%= @booking_template_item.zamboni %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @booking_template_item.comment %>
+</p>
+
+<%= link_to 'Edit', edit_booking_template_item_path(@booking_template_item) %> |
+<%= link_to 'Back', booking_template_items_path %>

@@ -1,0 +1,29 @@
+<%= bootstrap_form_for(booking, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+
+  <% if booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+      <% booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.text_field :date_str, hide_label:true, placeholder: "date" %>
+  <%= f.number_field :week, hide_label:true, placeholder: "week" %>
+  <%= f.text_field :from, hide_label:true, placeholder: "from" %>
+  <%= f.text_field :to, hide_label:true, placeholder: "to" %>
+  <%= f.text_field :activity, hide_label:true, placeholder: "acivity" %>
+  <%= f.text_field :team, hide_label:true, placeholder: "team" %>
+  <%= f.text_field :note, hide_label:true, placeholder: "note<" %>
+  <%= f.text_field :zamboni, hide_label:true, placeholder: "zamboni" %>
+  <%= f.text_field :comment, hide_label:true, placeholder: "comment" %>
+
+  <%= f.form_group do %>
+    <%= f.submit %>
+  <% end %>
+
+<% end %>

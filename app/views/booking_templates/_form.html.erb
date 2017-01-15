@@ -1,0 +1,32 @@
+<%= form_for(booking_template) do |f| %>
+  <% if booking_template.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(booking_template.errors.count, "error") %> prohibited this booking_template from being saved:</h2>
+
+      <ul>
+      <% booking_template.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :creator %>
+    <%= f.text_field :creator %>
+  </div>
+
+  <div class="field">
+    <%= f.label :created_at %>
+    <%= f.date_select :created_at %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,1 @@
+json.partial! "booking_templates/booking_template", booking_template: @booking_template

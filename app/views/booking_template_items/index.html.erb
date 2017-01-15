@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Booking Template Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Booking template</th>
+      <th>Date str</th>
+      <th>Week</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Activity</th>
+      <th>Team</th>
+      <th>Note</th>
+      <th>Zamboni</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @booking_template_items.each do |booking_template_item| %>
+      <tr>
+        <td><%= booking_template_item.booking_template_id %></td>
+        <td><%= booking_template_item.date_str %></td>
+        <td><%= booking_template_item.week %></td>
+        <td><%= booking_template_item.from %></td>
+        <td><%= booking_template_item.to %></td>
+        <td><%= booking_template_item.activity %></td>
+        <td><%= booking_template_item.team %></td>
+        <td><%= booking_template_item.note %></td>
+        <td><%= booking_template_item.zamboni %></td>
+        <td><%= booking_template_item.comment %></td>
+        <td><%= link_to 'Show', booking_template_item %></td>
+        <td><%= link_to 'Edit', edit_booking_template_item_path(booking_template_item) %></td>
+        <td><%= link_to 'Destroy', booking_template_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Booking Template Item', new_booking_template_item_path %>

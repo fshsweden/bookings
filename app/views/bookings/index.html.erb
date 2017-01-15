@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bookings</h1>
+
+<div class="hidden-sm-up"><h1>HIDDEN ON SMALL DEVICES</h1></div>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Week</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Activity</th>
+      <th>Team</th>
+      <th>Note</th>
+      <th>Zamboni</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.date_str %></td>
+        <td><%= booking.week %></td>
+        <td><%= booking.from %></td>
+        <td><%= booking.to %></td>
+        <td><%= booking.activity %></td>
+        <td><%= booking.team %></td>
+        <td class="hidden-sm-down"><%= booking.note %></td>
+        <td class="hidden-sm-down"><%= booking.zamboni %></td>
+        <td class="hidden-sm-down"><%= booking.comment %></td>
+        <td class="hidden-sm-down"><%= link_to 'Show', booking %></td>
+        <td class="hidden-sm-down"><%= link_to 'Edit', edit_booking_path(booking) %></td>
+        <td class="hidden-sm-down"><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Booking', new_booking_path %>
