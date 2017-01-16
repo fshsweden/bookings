@@ -1,7 +1,10 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
+
+$body-bg: #6495ED;
+
 @import "bootstrap";
 
-body {
+/*body {
   background-color: #6495ED;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -9,3 +12,4 @@ body {
   line-height: 18px;
   margin: 33px;
 }
+*/

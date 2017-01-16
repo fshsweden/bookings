@@ -12,7 +12,7 @@ class AutoCreateController < ApplicationController
       puts "NO BLANK STUFF PLEASE!"
     else
       for indx in 0..6
-        date = dt_of_week(0, params[:week].to_i)
+        date = dt_of_week(indx, params[:week].to_i)
 
         create_booking_item date,
                             params[:week].to_i,
@@ -136,7 +136,7 @@ class AutoCreateController < ApplicationController
   #
   def dt_of_week(index, week_num)
     dt = get_start_date_of_week(2017, week_num)
-
+    dt + index.days
   end
 
   # tmpl is an array of 7 template booking items

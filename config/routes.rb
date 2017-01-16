@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get "auto", :controller => :auto_create, :action => :index
   post "create", :controller => :auto_create, :action => :create
   post "copy", :controller => :auto_create, :action => :copy
-  get "week", :controller => :booking_items, :action => :week
+  get "week/:week", :controller => :booking_items, :action => :week
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

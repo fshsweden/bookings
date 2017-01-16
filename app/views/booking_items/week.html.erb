@@ -1,1 +1,8 @@
 <h1>WEEK</h1>
+
+<% @bookings.each do |b| %>
+  <h1><%=  b.date_str  %></h1>
+  <h5><%=  b.from  %></h5>
+  <h5><%=  b.to  %></h5>
+
+<% end %>

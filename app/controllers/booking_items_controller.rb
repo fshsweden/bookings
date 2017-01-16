@@ -11,7 +11,8 @@ class BookingItemsController < ApplicationController
   #
   #
   def week
-    @bookings = BookingItem.where(:week => 5).order(:date_str)
+
+    @bookings = BookingItem.where(:week => params[:week]).order(:date_str, :from)
   end
 
   # GET /bookings/1
