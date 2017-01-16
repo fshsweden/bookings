@@ -1,2 +1,0 @@
-class BookingTemplateItem < ApplicationRecord
-end

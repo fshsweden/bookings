@@ -33,7 +33,7 @@
         <td class="hidden-sm-down"><%= booking.zamboni %></td>
         <td class="hidden-sm-down"><%= booking.comment %></td>
         <td class="hidden-sm-down"><%= link_to 'Show', booking %></td>
-        <td class="hidden-sm-down"><%= link_to 'Edit', edit_booking_path(booking) %></td>
+        <td class="hidden-sm-down"><%= link_to 'Edit', edit_booking_item_path(booking) %></td>
         <td class="hidden-sm-down"><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -42,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Booking', new_booking_path %>
+<%= link_to 'New Booking', new_booking_item_path %>

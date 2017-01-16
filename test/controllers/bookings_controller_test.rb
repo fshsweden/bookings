@@ -17,7 +17,20 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create booking" do
     assert_difference('Booking.count') do
-      post bookings_url, params: { booking: { activity: @booking.activity, comment: @booking.comment, date_str: @booking.date_str, from: @booking.from, note: @booking.note, team: @booking.team, to: @booking.to, week: @booking.week, zamboni: @booking.zamboni } }
+      post  bookings_url,
+            params: {
+                booking: {
+                    activity: @booking.activity,
+                    comment: @booking.comment,
+                    date_str: @booking.date_str,
+                    from: @booking.from,
+                    note: @booking.note,
+                    team: @booking.team,
+                    to: @booking.to,
+                    week: @booking.week,
+                    zamboni: @booking.zamboni
+                }
+            }
     end
 
     assert_redirected_to booking_url(Booking.last)
@@ -33,10 +46,10 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should update booking" do
-    patch booking_url(@booking), params: { booking: { activity: @booking.activity, comment: @booking.comment, date_str: @booking.date_str, from: @booking.from, note: @booking.note, team: @booking.team, to: @booking.to, week: @booking.week, zamboni: @booking.zamboni } }
-    assert_redirected_to booking_url(@booking)
-  end
+  #test "should update booking" do
+  #  patch booking_url(@booking), params: { booking: { activity: @booking.activity, comment: @booking.comment, date_str: @booking.date_str, from: @booking.from, note: @booking.note, team: @booking.team, to: @booking.to, week: @booking.week, zamboni: @booking.zamboni } }
+  #  assert_redirected_to booking_url(@booking)
+  #end
 
   test "should destroy booking" do
     assert_difference('Booking.count', -1) do

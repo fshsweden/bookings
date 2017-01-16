@@ -1,10 +1,17 @@
-class BookingsController < ApplicationController
+class BookingItemsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   # GET /bookings
   # GET /bookings.json
   def index
-    @bookings = Booking.all
+    @bookings = BookingItem.all.order(:date_str)
+  end
+
+  #
+  #
+  #
+  def week
+    @bookings = BookingItem.where(:week => 5).order(:date_str)
   end
 
   # GET /bookings/1
@@ -14,17 +21,18 @@ class BookingsController < ApplicationController
 
   # GET /bookings/new
   def new
-    @booking = Booking.new
+    @booking = BookingItem.new
   end
 
   # GET /bookings/1/edit
   def edit
   end
 
+
   # POST /bookings
   # POST /bookings.json
   def create
-    @booking = Booking.new(booking_params)
+    @booking = BookingItem.new(booking_params)
 
     respond_to do |format|
       if @booking.save
@@ -64,11 +72,11 @@ class BookingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_booking
-      @booking = Booking.find(params[:id])
+      @booking = BookingItem.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def booking_params
-      params.require(:booking).permit(:date_str, :week, :from, :to, :activity, :team, :note, :zamboni, :comment)
+      params.require(:booking_item).permit(:date_str, :week, :from, :to, :activity, :team, :note, :zamboni, :comment)
     end
 end

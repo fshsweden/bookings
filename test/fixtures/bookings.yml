@@ -1,23 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  date_str: MyString
+  date_str: 2017-01-01
   week: 1
-  from: MyString
-  to: MyString
-  activity: MyString
-  team: MyString
-  note: MyString
-  zamboni: MyString
-  comment: MyString
+  from: 10:00
+  to: 11:00
+  activity: TRÄNING
+  team: U14
+  note:
+  zamboni: Kommun
+  comment:
 
 two:
-  date_str: MyString
+  date_str: 2017-01-16
   week: 1
-  from: MyString
-  to: MyString
-  activity: MyString
-  team: MyString
-  note: MyString
-  zamboni: MyString
-  comment: MyString
+  from: 10:00
+  to: 11:00
+  activity: TRÄNING
+  team: U14
+  note:
+  zamboni: Kommun
+  comment:

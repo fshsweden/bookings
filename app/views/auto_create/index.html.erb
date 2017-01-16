@@ -1,0 +1,41 @@
+<h1>Create Week</h1>'
+
+<%= bootstrap_form_tag(url: '/create', layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+
+  <% if @errors != nil %>
+    <% @errors.each do |e| %>
+      <h5><%= e %> </h5>
+    <% end %>
+  <% else %>
+      <h5>NO ERRORS!</h5>
+  <% end %>
+
+  <%= f.text_field :week, hide_label:true,  placeholder: "Week" %>
+
+  <%= f.form_group do %>
+    <%= f.submit %>
+  <% end %>
+
+<% end %>
+
+
+<h1>Copy week</h1>'
+
+<%= bootstrap_form_tag(url: '/copy', layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
+
+  <% if @errors != nil %>
+    <% @errors.each do |e| %>
+      <h5><%= e %> </h5>
+    <% end %>
+  <% else %>
+      <h5>NO ERRORS!</h5>
+  <% end %>
+
+  <%= f.text_field :source, hide_label:true,  placeholder: "Source Week" %>
+  <%= f.text_field :target, hide_label:true,  placeholder: "Target Week" %>
+
+  <%= f.form_group do %>
+    <%= f.submit %>
+  <% end %>
+
+<% end %>

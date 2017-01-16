@@ -5,8 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# added
+## https://github.com/twbs/bootstrap
 gem 'bootstrap', '~> 4.0.0.alpha6'
-gem 'bootstrap_form'
+## http://github.com/bootstrap-ruby/rails-bootstrap-forms
+gem 'bootstrap_form'  ## Note NOT "bootstrap-ruby"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
