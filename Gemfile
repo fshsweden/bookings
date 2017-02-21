@@ -7,9 +7,11 @@ end
 
 # added
 ## https://github.com/twbs/bootstrap
+## https://github.com/twbs/bootstrap-rubygem
 gem 'bootstrap', '~> 4.0.0.alpha6'
 ## http://github.com/bootstrap-ruby/rails-bootstrap-forms
 gem 'bootstrap_form'  ## Note NOT "bootstrap-ruby"
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'

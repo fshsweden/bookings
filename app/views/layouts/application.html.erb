@@ -3,7 +3,6 @@
   <head>
     <title>Bookings</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -11,19 +10,56 @@
   <body>
 
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+
+          <button class="navbar-toggler navbar-toggler-right"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarsExampleDefault"
+                  aria-controls="navbarsExampleDefault"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="#">Navbar</a>
+
+          <a class="navbar-brand" href="#">Schema</a>
 
           <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
+
               <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/week/1">Week/1</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="/week/2">Week/2</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/week/3">Week/3</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/week/4">Week/4</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/week/5">Week/5</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/auto">Auto</a>
+              </li>
+
+
+              <li class="nav-item">
+                <% if current_user %>
+                  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "nav-link" %>
+                <% else %>
+                  <%= link_to 'Login',  new_user_session_path, class: "nav-link" %>
+                <% end %>
+              </li>
+
+<!--
               <li class="nav-item">
                 <a class="nav-link disabled" href="#">Disabled</a>
               </li>
@@ -35,17 +71,27 @@
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
               </li>
+-->
             </ul>
+
             <form class="form-inline my-2 my-md-0">
               <input class="form-control mr-sm-2" type="text" placeholder="Search">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
+
           </div>
+
         </nav>
-            
+
     <div class="container">
       <div class="col-md-3"></div>
       <div class="col-md-6">
+
+        <!-- FLASH MESSAGES -->
+
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
         <%= yield %>
       </div>
       <div class="col-md-3"></div>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root "/bookings", :controller => :booking_items, :action => :index
+  devise_for :users
+  root to: "booking_items#index"
 
   resources :booking_templates
   resources :booking_template_items

@@ -1,7 +1,15 @@
 class AutoCreateController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
     # present auto-create screen
+
+    # some statistics
+    ## @bookings = BookingItem.where(:week => params[:week]).order(:date_str, :from)
+    @weekdata = BookingItem.where(:week => 1..5).group(:week).count
+    ## {1=>49, 2=>49}
+    
   end
 
   def create

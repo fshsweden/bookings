@@ -4,6 +4,10 @@ $body-bg: #6495ED;
 
 @import "bootstrap";
 
+td{
+  white-space: nowrap;
+}
+
 /*body {
   background-color: #6495ED;
   color: #333;

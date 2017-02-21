@@ -10,29 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170115090600) do
-
-  create_table "booking_template_items", force: :cascade do |t|
-    t.string   "booking_template_id"
-    t.string   "date_str"
-    t.integer  "week"
-    t.string   "from"
-    t.string   "to"
-    t.string   "activity"
-    t.string   "team"
-    t.string   "note"
-    t.string   "zamboni"
-    t.string   "comment"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-  end
-
-  create_table "booking_templates", force: :cascade do |t|
-    t.string   "name"
-    t.string   "creator"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20170117112552) do
 
   create_table "bookings", force: :cascade do |t|
     t.string   "date_str"
@@ -46,6 +24,24 @@ ActiveRecord::Schema.define(version: 20170115090600) do
     t.string   "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["date_str", "week", "from", "to"], name: "booking_ix"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

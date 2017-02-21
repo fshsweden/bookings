@@ -1,42 +1,70 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Bookings</h1>
+<h1>Week 3</h1>
 
-<div class="hidden-sm-up"><h1>HIDDEN ON SMALL DEVICES</h1></div>
+<!-- TEST
+  <div class="hidden-xs-down"><h1>HIDDEN ON XTRA SMALL DEVICES</h1></div>
+  <div class="hidden-sm-down"><h1>HIDDEN ON SMALL DEVICES</h1></div>
+  <div class="hidden-md-down"><h1>HIDDEN ON MEDIUM DEVICES</h1></div>
+  <div class="hidden-lg-down"><h1>HIDDEN ON LARGE DEVICES</h1></div>
+-->
 
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Week</th>
       <th>From</th>
       <th>To</th>
       <th>Activity</th>
       <th>Team</th>
-      <th>Note</th>
-      <th>Zamboni</th>
-      <th>Comment</th>
-      <th colspan="3"></th>
+      <th class="hidden-xs-down">Note</th>
+      <th class="hidden-xs-down">Zamboni</th>
+      <th class="hidden-xs-down">Comment</th>
+      <% if current_user %>
+        <th colspan="3"></th>
+      <% end %>
     </tr>
   </thead>
 
+  <% prev_date_str = "" %>
+
   <tbody>
+
     <% @bookings.each do |booking| %>
-      <tr>
-        <td><%= booking.date_str %></td>
-        <td><%= booking.week %></td>
-        <td><%= booking.from %></td>
-        <td><%= booking.to %></td>
-        <td><%= booking.activity %></td>
-        <td><%= booking.team %></td>
-        <td class="hidden-sm-down"><%= booking.note %></td>
-        <td class="hidden-sm-down"><%= booking.zamboni %></td>
-        <td class="hidden-sm-down"><%= booking.comment %></td>
-        <td class="hidden-sm-down"><%= link_to 'Show', booking %></td>
-        <td class="hidden-sm-down"><%= link_to 'Edit', edit_booking_item_path(booking) %></td>
-        <td class="hidden-sm-down"><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% if prev_date_str != "" && prev_date_str != booking.date_str %>
+
+        <tr style="background-color:lightgray">
+          <td colspan="7"><%= booking.date_str %></td>
+          <% if current_user %>
+            <td class="hidden-xs-down"></td>
+            <td class="hidden-xs-down"></td>
+            <td class="hidden-xs-down"></td>
+          <% end %>
+        </tr>
+
+      <% else %>
+
+        <tr>
+          <td><%= booking.from %></td>
+          <td><%= booking.to %></td>
+          <td><%= booking.activity %></td>
+          <td><%= booking.team %></td>
+          <td class="hidden-sm-down"><%= booking.note %></td>
+          <td class="hidden-sm-down"><%= booking.zamboni %></td>
+          <td class="hidden-sm-down"><%= booking.comment %></td>
+
+          <% if current_user %>
+            <td class="hidden-sm-down"><%= link_to 'Show', booking %></td>
+            <td class="hidden-sm-down"><%= link_to 'Edit', edit_booking_item_path(booking) %></td>
+            <td class="hidden-sm-down"><%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+
+      <% end %>
+
+      <% prev_date_str = booking.date_str %>
+
     <% end %>
+
   </tbody>
 </table>
 

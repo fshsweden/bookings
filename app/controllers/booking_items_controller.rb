@@ -11,7 +11,6 @@ class BookingItemsController < ApplicationController
   #
   #
   def week
-
     @bookings = BookingItem.where(:week => params[:week]).order(:date_str, :from)
   end
 
